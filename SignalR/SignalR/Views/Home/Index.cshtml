@@ -1,0 +1,44 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container">
+    <div class="row" id="inputArea">
+        <form>
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" id="username">
+            </div>
+            <div class="form-group">
+                <label for="group">Groups</label>
+                <select class="form-control" id="group">
+                    <option>Group 1</option>
+                    <option>Group 2</option>
+                </select>
+            </div>
+            <button class="btn btn-primary" id="enterGroup">Enter Group</button>
+        </form>
+    </div>
+    <div class="row d-none" id="messageArea">
+        <div class="col-md-4">
+            <form>
+                <button class="btn btn-outline-danger" id="leaveGroup">Leave Group</button>
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <textarea class="form-control" id="message"></textarea>
+                </div>
+                <button class="btn btn-primary" id="sendMessage">Send Message</button>
+            </form>
+        </div>
+        <div class="col-md-8">
+            <ul class="list-group" id="messagesList">
+            </ul>
+        </div>
+    </div>
+</div>
+
+@section Scripts
+{
+    <script src="~/lib/microsoft/signalr/dist/browser/signalr.js"></script>
+    <script src="~/js/chat.js" asp-append-version="true"></script>
+}
